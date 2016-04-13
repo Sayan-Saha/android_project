@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sayan.android_project.temperature">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:layout_alignParentLeft="true"
+            android:id="@+id/temperatureValue"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:hint="Enter the value"
+            android:textAllCaps="true"
+            android:inputType="numberDecimal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+        <Spinner
+            android:id="@+id/dropDown"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignTop="@id/temperatureValue"
+            android:layout_toRightOf="@id/temperatureValue">
+        </Spinner>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/C"
+            android:text="0"
+            android:textSize="20dp"
+            android:padding="25sp"
+            android:layout_below="@id/dropDown"
+            android:layout_alignLeft="@id/temperatureValue"
+            android:layout_alignStart="@id/temperatureValue" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/F"
+            android:text="0"
+            android:textSize="20dp"
+            android:padding="25sp"
+            android:layout_below="@id/C"
+            android:layout_alignLeft="@id/temperatureValue"
+            android:layout_alignStart="@id/temperatureValue" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/K"
+            android:text="0"
+            android:textSize="20dp"
+            android:padding="25sp"
+            android:layout_below="@id/F"
+            android:layout_alignLeft="@id/temperatureValue"
+            android:layout_alignStart="@id/temperatureValue" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cUnit"
+            android:text="C"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:padding="25sp"
+            android:layout_below="@id/dropDown"
+            android:layout_toRightOf="@id/C" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fUnit"
+            android:text="F"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:padding="25sp"
+            android:layout_below="@id/C"
+            android:layout_toRightOf="@id/F"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/kUnit"
+            android:text="K"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:padding="25sp"
+            android:layout_below="@id/F"
+            android:layout_toRightOf="@id/K"/>
+    </RelativeLayout>
+</ScrollView>

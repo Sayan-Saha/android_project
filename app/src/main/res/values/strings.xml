@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android_Project</string>
+    <string-array name="lenght_Unit">
+        <item>km</item>
+        <item>m</item>
+        <item>cm</item>
+    </string-array>
+    <string-array name="temperature_Unit">
+        <item>C</item>
+        <item>F</item>
+        <item>K</item>
+    </string-array>
+</resources>
