@@ -1,13 +1,18 @@
 <resources>
-    <string name="app_name">Android_Project</string>
+    <string name="app_name">Unit Converter</string>
     <string-array name="lenght_Unit">
-        <item>km</item>
-        <item>m</item>
-        <item>cm</item>
+        <item> km </item>
+        <item> m </item>
+        <item> cm </item>
     </string-array>
     <string-array name="temperature_Unit">
-        <item>C</item>
-        <item>F</item>
-        <item>K</item>
+        <item>\u00B0C</item>
+        <item>\u00B0F</item>
+        <item> K</item>
+    </string-array>
+    <string-array name="weight_Unit">
+        <item> g </item>
+        <item> Kg </item>
+        <item> lb </item>
     </string-array>
 </resources>

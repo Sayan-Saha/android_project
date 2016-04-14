@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".lengthActivity" />
-        <activity android:name=".temperature"></activity>
+        <activity android:name=".temperature" />
+        <activity android:name=".weight"></activity>
     </application>
 
 </manifest>

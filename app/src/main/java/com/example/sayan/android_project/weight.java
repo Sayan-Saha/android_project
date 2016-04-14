@@ -3,6 +3,7 @@ package com.example.sayan.android_project;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class temperature extends AppCompatActivity {
+public class weight extends AppCompatActivity {
 
     Spinner dropDown;               //Spinner Deceleration
     ArrayAdapter adapter;          //Array Adapter Deceleration
@@ -19,9 +20,9 @@ public class temperature extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temperature);
+        setContentView(R.layout.activity_weight);
         dropDown = (Spinner) findViewById(R.id.dropDown);
-        adapter = ArrayAdapter.createFromResource(this,R.array.temperature_Unit,android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(this,R.array.weight_Unit,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropDown.setAdapter(adapter);
         dropDown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -39,43 +40,43 @@ public class temperature extends AppCompatActivity {
     public void convert (View view)
     {
         //Initialization of units to compare with spinner values
-        String c = "\u00B0C" ;
-        String f = "\u00B0F" ;
-        String k = "K" ;
+        String g = "g" ;
+        String k = "Kg" ;
+        String l = "lb" ;
         //Storing the user input
-        EditText tempV = (EditText) findViewById(R.id.temperatureValue);
-        String temperatureValueString = tempV.getText().toString();
-        if(TextUtils.isEmpty(temperatureValueString))
+        EditText weightV = (EditText) findViewById(R.id.weightValue);
+        String weightValueString = weightV.getText().toString();
+        if(TextUtils.isEmpty(weightValueString))
         {
             Toast.makeText(this, "Please Enter A Value", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            double value = Double.parseDouble(temperatureValueString);
+            double value = Double.parseDouble(weightValueString);
             //comparing the strings
 
-
-            if (selectedUnit.equals(c)) {
-                displayResult(value, (value * 1.8) + 32, value + 273.15);
-            }
-
-            if (selectedUnit.equals(f)) {
-                displayResult((value - 32) * 5 / 9, value, ((value - 32) * 5 / 9) + 273.15);
+            if (selectedUnit.equals(g)) {
+                displayResult(value, value / 1000, (value / 1000) * 2.204622622);
             }
             if (selectedUnit.equals(k)) {
-                displayResult(value - 273.15, ((value - 273.15) * 1.8) + 32, value);
+                displayResult(value * 1000, value, value * 2.204622622);
             }
+            if (selectedUnit.equals(l)) {
+                displayResult((value / 2.204622622) * 1000, value / 2.204622622, value);
+            }
+
         }
+
+
     }
     //To display the output
-    private void displayResult(double c,double f,double k)
+    private void displayResult(double g,double kg,double lb)
     {
-        TextView CResultTextView = (TextView) findViewById(R.id.C);
-        CResultTextView.setText("" + c);
-        TextView FResultTextView = (TextView) findViewById(R.id.F);
-        FResultTextView.setText("" + f);
-        TextView KResultTextView = (TextView) findViewById(R.id.K);
-        KResultTextView.setText("" + k);
+        TextView gmResultTextView = (TextView) findViewById(R.id.gm);
+        gmResultTextView.setText("" + g);
+        TextView kgResultTextView = (TextView) findViewById(R.id.kg);
+        kgResultTextView.setText("" + kg);
+        TextView lbResultTextView = (TextView) findViewById(R.id.lb);
+        lbResultTextView.setText("" + lb);
     }
-
 }

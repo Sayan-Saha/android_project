@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.sayan.android_project.lengthActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="false">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +23,9 @@
             android:inputType="numberDecimal"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:maxLength="6"
+            android:clickable="true"/>
         <Spinner
             android:id="@+id/dropDown"
             android:layout_width="wrap_content"
@@ -37,9 +40,11 @@
             android:text="0"
             android:textSize="20dp"
             android:padding="25sp"
-            android:layout_below="@id/dropDown"
-            android:layout_alignLeft="@id/lengthValue"
-            android:layout_alignStart="@id/lengthValue" />
+            android:maxLength="8"
+            android:layout_above="@+id/m"
+            android:layout_alignLeft="@+id/cm"
+            android:layout_alignStart="@+id/cm"
+            android:lines="1"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,23 +52,28 @@
             android:text="0"
             android:textSize="20dp"
             android:padding="25sp"
-            android:layout_below="@id/km"
-            android:layout_alignLeft="@id/lengthValue"
-            android:layout_alignStart="@id/lengthValue" />
+            android:maxLength="8"
+            android:lines="1"
+            android:layout_below="@+id/kmUnit"
+            android:layout_alignLeft="@+id/cm"
+            android:layout_alignStart="@+id/cm" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cm"
             android:text="0"
             android:textSize="20dp"
+            android:lines="1"
+            android:maxLength="8"
             android:padding="25sp"
-            android:layout_below="@id/m"
-            android:layout_alignLeft="@id/lengthValue"
-            android:layout_alignStart="@id/lengthValue" />
+            android:layout_below="@+id/m"
+            android:layout_toLeftOf="@+id/kmUnit"
+            android:layout_toStartOf="@+id/kmUnit"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp" />
         <View
-            android:layout_width="1dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
             android:background="@android:color/black" />
         <TextView
             android:layout_width="wrap_content"
@@ -73,8 +83,8 @@
             android:textStyle="bold"
             android:textSize="22dp"
             android:padding="25sp"
-            android:layout_below="@id/dropDown"
-            android:layout_toRightOf="@id/km" />
+            android:layout_below="@id/lengthValue"
+            android:layout_centerHorizontal="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,8 +93,8 @@
             android:textStyle="bold"
             android:textSize="22dp"
             android:padding="25sp"
-            android:layout_below="@id/km"
-            android:layout_toRightOf="@id/m"/>
+            android:layout_alignTop="@id/m"
+            android:layout_centerHorizontal="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,7 +103,21 @@
             android:textStyle="bold"
             android:textSize="22dp"
             android:padding="25sp"
-            android:layout_below="@id/m"
-            android:layout_toRightOf="@id/cm"/>
+            android:layout_below="@+id/m"
+            android:layout_toRightOf="@+id/cm"
+            android:layout_toEndOf="@+id/cm" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert"
+            android:id="@+id/convert"
+            android:onClick="convert"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_alignBottom="@+id/dropDown"
+            android:layout_toRightOf="@+id/kmUnit"
+            android:layout_toEndOf="@+id/kmUnit" />
     </RelativeLayout>
 </ScrollView>
